@@ -4,7 +4,7 @@ ray.native: ray.ml timing.o
 	ocamlbuild -use-ocamlfind ray.native -lflags timing.o
 
 timing.o: timing.c
-	ocamlbuild timing.o
+	ocamlbuild -use-ocamlfind timing.o
 
 rgbbox_1000.ppm: ray.native
 	./ray.native -f $@ -s rgbbox -n 1000 -m 1000
